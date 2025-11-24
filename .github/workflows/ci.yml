@@ -1,18 +1,15 @@
 name: Continuous Integration
 
 on:
-  push:
-    branches: [ "main", "development" ]
   pull_request:
-    types: [opened, synchronize, reopened]
     branches:
       - 'development'
-      - 'main'
       - 'master'
 
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Checkout repository
@@ -21,17 +18,20 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
-          cache: 'npm'
+          node-version: '20'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+
+      - name: Force install problematic package
+        run: npm install eslint-plugin-cypress
 
       - name: Run linter
         run: npm run lint
 
       - name: Run tests
-        run: npm test
+        run: npm run test:ci
+        timeout-minutes: 5
 
       - name: Run E2E tests
         run: npm run e2e
