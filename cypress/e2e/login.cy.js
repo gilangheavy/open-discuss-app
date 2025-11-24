@@ -60,7 +60,7 @@ describe('Login spec', () => {
 
     // Verify redirect to homepage
     cy.url({timeout: 10000}).should('eq', `${Cypress.config().baseUrl}/`);
-    
+
     // Verify user is logged in (check for logout button or user menu)
     cy.get('button').contains(/logout/i, {timeout: 10000}).should('be.visible');
   });
