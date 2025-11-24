@@ -68,22 +68,22 @@ Berikut adalah daftar tugas pengembangan yang perlu diselesaikan. Daftar ini aka
 
 ## ⏳ Fase 5: Submission 2 - UI Upgrade, Testing & CI/CD
 
-- [ ] **UI Upgrade**:
-    - [ ] Setup & Konfigurasi `shadcn/ui` sebagai React Ecosystem.
+- [~] **UI Upgrade (In Progress - Issue #2)**:
+    - [~] Setup & Konfigurasi `shadcn/ui` sebagai React Ecosystem.
     - [ ] Refactor komponen UI yang ada (Buttons, Inputs, Cards, etc.) menggunakan `shadcn/ui`.
-- [ ] **Automation Testing**:
+- [~] **CI/CD (Partially Completed - Issue #1)**:
+    - [x] Konfigurasi GitHub Actions untuk menjalankan test pada setiap push/PR (`.github/workflows/ci.yml`).
+    - [ ] Konfigurasi Vercel untuk Continuous Deployment.
+    - [ ] Terapkan Branch Protection di `master`/`main`.
+    - [x] Siapkan panduan untuk screenshot yang dibutuhkan untuk submission.
+- [ ] **Automation Testing (Next Up - Issue #3)**:
     - [ ] Setup & Konfigurasi environment testing (Vitest, React Testing Library, Cypress).
     - [ ] Buat Unit Test untuk Reducers (min. 2).
     - [ ] Buat Unit Test untuk Thunks (min. 2).
     - [ ] Buat Integration Test untuk Komponen (min. 2).
     - [ ] Buat E2E Test untuk alur Login (1 skenario).
-- [ ] **CI/CD**:
-    - [ ] Konfigurasi GitHub Actions untuk menjalankan test pada setiap push/PR.
-    - [ ] Konfigurasi Vercel untuk Continuous Deployment.
-    - [ ] Terapkan Branch Protection di `master`/`main`.
-- [ ] **Dokumentasi**:
-    - [ ] Siapkan screenshot yang dibutuhkan untuk submission.
 
-**Status Fase:** Pending (Mulai 24 November 2025)
+**Status Fase:** In Progress (Mulai 24 November 2025)
+*Catatan: `[x]` = Selesai, `[~]` = Sedang Dikerjakan, `[ ]` = Belum Dikerjakan*
 
 ---
