@@ -68,20 +68,20 @@ Berikut adalah daftar tugas pengembangan yang perlu diselesaikan. Daftar ini aka
 
 ## ⏳ Fase 5: Submission 2 - UI Upgrade, Testing & CI/CD
 
-- [~] **UI Upgrade (In Progress - Issue #2)**:
-    - [~] Setup & Konfigurasi `shadcn/ui` sebagai React Ecosystem.
-    - [ ] Refactor komponen UI yang ada (Buttons, Inputs, Cards, etc.) menggunakan `shadcn/ui`.
-- [~] **CI/CD (Partially Completed - Issue #1)**:
-    - [x] Konfigurasi GitHub Actions untuk menjalankan test pada setiap push/PR (`.github/workflows/ci.yml`).
-    - [ ] Konfigurasi Vercel untuk Continuous Deployment.
-    - [ ] Terapkan Branch Protection di `master`/`main`.
-    - [x] Siapkan panduan untuk screenshot yang dibutuhkan untuk submission.
-- [ ] **Automation Testing (Next Up - Issue #3)**:
+- [x] **UI Upgrade (Completed - Issue #2)**:
+    - [x] Setup & Konfigurasi `shadcn/ui` sebagai React Ecosystem.
+    - [x] Refactor komponen UI yang ada (Buttons, Inputs, Cards, etc.) menggunakan `shadcn/ui`.
+- [~] **Automation Testing (In Progress - Issue #3)**:
     - [ ] Setup & Konfigurasi environment testing (Vitest, React Testing Library, Cypress).
     - [ ] Buat Unit Test untuk Reducers (min. 2).
     - [ ] Buat Unit Test untuk Thunks (min. 2).
     - [ ] Buat Integration Test untuk Komponen (min. 2).
     - [ ] Buat E2E Test untuk alur Login (1 skenario).
+- [~] **CI/CD (Partially Completed - Issue #1)**:
+    - [x] Konfigurasi GitHub Actions untuk menjalankan test pada setiap push/PR (`.github/workflows/ci.yml`).
+    - [ ] Konfigurasi Vercel untuk Continuous Deployment.
+    - [ ] Terapkan Branch Protection di `master`/`main`.
+    - [x] Siapkan panduan untuk screenshot yang dibutuhkan untuk submission.
 
 **Status Fase:** In Progress (Mulai 24 November 2025)
 *Catatan: `[x]` = Selesai, `[~]` = Sedang Dikerjakan, `[ ]` = Belum Dikerjakan*
