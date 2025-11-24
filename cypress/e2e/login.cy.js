@@ -1,5 +1,5 @@
 describe('Login flow', () => {
-  it('should show an error for incorrect login', () => {
+  it('should login successfully with correct credentials', () => {
     // Start from the home page
     cy.visit('http://localhost:5173/');
 
@@ -9,16 +9,17 @@ describe('Login flow', () => {
     // The new url should include "/login"
     cy.url().should('include', '/login');
 
-    // Get an input with name="email" and type "test@example.com"
-    cy.get('input[name="email"]').type('test@example.com');
-
-    // Get an input with name="password" and type "password123"
+    // Use a valid test user account
+    cy.get('input[name="email"]').type('user@example.com');
     cy.get('input[name="password"]').type('password123');
 
     // Get the login button and click it
     cy.get('button').contains('Login').click();
 
-    // This assertion is designed to fail to create a "red flag"
-    cy.get('body').should('contain', 'Login Gagal');
+    // After login, the URL should change back to the home page
+    cy.url().should('eq', 'http://localhost:5173/');
+
+    // And the page should contain text that indicates a successful login, like a "Logout" button
+    cy.get('nav').should('contain', 'Logout');
   });
 });
