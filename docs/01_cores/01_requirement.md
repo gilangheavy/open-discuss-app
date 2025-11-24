@@ -142,3 +142,85 @@ Submission akan dinilai oleh reviewer dalam skala 1-5. Untuk mendapatkan nilai t
 - Saran lainnya:
   - Aplikasi yang Anda bangun mudah untuk digunakan. Contohnya, tidak membuat pengguna bingung dan menggunakan warna yang mudah dalam membaca teks.
   - Aplikasi yang Anda bangun memiliki tampilkan yang menarik.
+
+
+---
+
+---
+
+# Menerapkan Automation Testing dan CI/CD pada Aplikasi Forum Diskusi
+
+Selamat! Anda sudah berada di penghujung kelas Menjadi React Web Developer Expert. Sejauh ini, Anda telah:
+
+- menguji aplikasi React secara otomatis pada tingkatan Unit, Integration atau Component, dan End-to-End testing;
+- menggunakan Jest, React Testing Library, dan Cypress dalam dalam menguji aplikasi secara otomatis.
+- mencoba kultur TDD;
+- menggunakan Git dalam mengelola source code;
+- men-deploy aplikasi dengan cara yang efisien, cepat, dan aman dengan CI/CD; dan
+- menggunakan ekosistem atau library yang mendukung pengembangan lebih cepat dan efisien.
+Untuk menguji pemahaman dan lulus dari kelas ini, kami perlu melakukan asesmen dengan memberikan tugas, yakni menerapkan Automation Testing dan CI/CD pada Aplikasi Forum Diskusi yang sudah Anda buat di submission sebelumnya. Reviewer kami akan memeriksa pekerjaan Anda dan menentukan kelulusan Anda pada kelas ini.
+
+## Tujuan Akhir
+- Buat pengujian mulai dari Unit, Integration, dan End-to-End pada Aplikasi Forum Diskusi.
+- Deploy Aplikasi Forum Diskusi dengan teknik CI/CD.
+- Memanfaatkan salah satu React Ecosystem pada Aplikasi Forum Diskusi.
+
+### Kriteria Utama 1: Automation Testing
+- Buat minimal dua pengujian fungsi Reducer.
+- Buat minimal dua pengujian Thunk Function.
+- Buat minimal dua pengujian React Components.
+- Buat minimal satu pengujian End-to-End untuk alur login aplikasi.
+- Wajib menulis skenario pengujian pada masing-masing berkas pengujian.
+- Pengujian dapat dijalankan dengan perintah npm test dan npm run e2e.
+
+> Catatan penting.
+>
+> Anda bisa tentukan sendiri fungsi reducer, thunk, dan React component yang hendak diuji. Untuk mengasah kemampuan, kami sarankan untuk menguji unit yang kompleks. Contonya, fungsi reducer yang > memiliki banyak kondisi atau fungsi thunk yang men-dispatch banyak action.
+
+### Kriteria Utama 2: Deployment Aplikasi
+- Deploy aplikasi dengan menggunakan teknik CI/CD.
+- Continuous Integration diterapkan dengan GitHub Actions.
+- Continuous Deployment diterapkan dengan Vercel.
+- Memproteksi branch master.
+- Melampirkan URL Vercel aplikasi Anda pada catatan submission.
+- Melampirkan screenshot sebagai bukti telah menerapkan konfigurasi CI/CD dan branch protection dengan benar. Screenshot yang perlu dilampirkan:
+  - 1_ci_check_error: menunjukkan CI check error karena pengujian gagal,
+  - 2_ci_check_success: menunjukkan CI check success karena pengujian berhasil,
+  - 3_branch_protection: menunjukkan branch protection.
+
+### Kriteria Utama 3: Memanfaatkan Salah Satu Ecosystem React
+- Memanfaatkan minimal satu React Ecosystem pada daftar berikut: [Awesome React Ecosystem](https://github.com/dicodingacademy/awesome-react-ecosystem#react-tools).
+- Berikut penggunaan Ecosystem React yang tidak kami pertimbangkan untuk memenuhi kriteria :
+  - Create React Apps
+  - Vite
+  - React Router
+  - React Icons
+  - Redux
+  - Redux Thunk
+  - Redux Toolkit
+  - Jest
+  - Vitest
+  - React Testing Library
+
+### Kriteria Utama 4: Mempertahankan Kriteria Submission Sebelumnya
+Aplikasi harus tetap mempertahankan kriteria utama yang ada di submission sebelumnya.
+
+- Fungsionalitas Aplikasi
+- Bugs Highlighting
+- Arsitektur Aplikasi
+
+### Penilaian
+
+Submission akan dinilai oleh reviewer dalam skala 1-5. Untuk mendapatkan nilai tinggi, Anda bisa menerapkan beberapa saran berikut.
+
+  - Terdapat lebih dari tiga pengujian fungsi reducer.
+- Terdapat lebih dari tiga pengujian fungsi thunks.
+- Terdapat lebih dari tiga pengujian pada React Component.
+- Memiliki minimal 2 stories komponen.
+- Menerapkan saran pada submission sebelumnya, seperti:
+  - fitur votes pada thread dan komentar;
+  - menampilkan leaderboard; dan
+  - filter daftar thread berdasarkan kategori.
+- Saran lainnya.
+- Aplikasi yang Anda bangun mudah untuk digunakan. Contohnya, tidak membuat pengguna bingung dan menggunakan warna yang mudah dalam membaca teks.
+- Aplikasi yang Anda bangun memiliki tampilkan yang menarik.
