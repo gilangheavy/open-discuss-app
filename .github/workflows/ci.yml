@@ -7,7 +7,6 @@ on:
     types: [opened, synchronize, reopened]
     branches:
       - 'development'
-      - 'main'
       - 'master'
 
 jobs:
@@ -33,7 +32,7 @@ jobs:
         run: npm run lint
 
       - name: Run tests
-        run: npm test
+        run: npm run test:ci
 
       - name: Run E2E tests
         run: npm run e2e
