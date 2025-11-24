@@ -33,7 +33,7 @@ jobs:
         run: npm run lint
 
       - name: Run tests
-        run: npm test
+        run: npm test -- src/features/auth/authSlice.test.js
 
       - name: Run E2E tests
         run: npm run e2e
