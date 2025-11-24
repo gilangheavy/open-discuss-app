@@ -4,7 +4,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import react from 'eslint-plugin-react';
 import stylistic from '@stylistic/eslint-plugin';
-import cypressPlugin from 'eslint-plugin-cypress';
+
 
 export default [
   {ignores: ['dist']},
@@ -16,6 +16,8 @@ export default [
         ...globals.browser,
         describe: 'readonly',
         it: 'readonly',
+        beforeEach: 'readonly',
+        expect: 'readonly',
         cy: 'readonly',
         Cypress: 'readonly',
         vi: 'readonly',
@@ -34,7 +36,6 @@ export default [
       react,
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
-      cypress: cypressPlugin,
       '@stylistic': stylistic,
     },
     rules: {
@@ -86,7 +87,6 @@ export default [
         },
       ],
       'react/prop-types': 'off',
-      ...cypressPlugin.configs.recommended.rules,
     },
   },
 

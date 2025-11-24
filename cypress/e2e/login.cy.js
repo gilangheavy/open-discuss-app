@@ -1,25 +1,65 @@
-describe('Login flow', () => {
-  it('should login successfully with correct credentials', () => {
-    // Start from the home page
-    cy.visit('http://localhost:5173/');
+/**
+ * - Login spec
+ *   - should display login page correctly
+ *   - should display alert when email is empty
+ *   - should display alert when password is empty
+ *   - should display alert when email and password are wrong
+ *   - should display homepage when email and password are correct
+ */
 
-    // Find a link with an href attribute containing "login" and click it
-    cy.get('a[href*="login"]').click();
+describe('Login spec', () => {
+  beforeEach(() => {
+    cy.visit('/login');
+  });
 
-    // The new url should include "/login"
-    cy.url().should('include', '/login');
+  it('should display login page correctly', () => {
+    // Verify login page elements
+    cy.get('input[type="email"]').should('be.visible');
+    cy.get('input[type="password"]').should('be.visible');
+    cy.get('button').contains(/masuk/i).should('be.visible');
+  });
 
-    // Use a valid test user account
-    cy.get('input[name="email"]').type('user@example.com');
-    cy.get('input[name="password"]').type('password123');
+  it('should display alert when email is empty', () => {
+    // Click login without filling email
+    cy.get('button').contains(/masuk/i).click();
 
-    // Get the login button and click it
-    cy.get('button').contains('Login').click();
+    // Verify validation message (browser validation or custom)
+    cy.get('input[type="email"]').then(($input) => {
+      expect($input[0].validationMessage).to.not.be.empty;
+    });
+  });
 
-    // After login, the URL should change back to the home page
-    cy.url().should('eq', 'http://localhost:5173/');
+  it('should display alert when password is empty', () => {
+    // Fill email but not password
+    cy.get('input[type="email"]').type('test@example.com');
+    cy.get('button').contains(/masuk/i).click();
 
-    // And the page should contain text that indicates a successful login, like a "Logout" button
-    cy.get('nav').should('contain', 'Logout');
+    // Verify password validation
+    cy.get('input[type="password"]').then(($input) => {
+      expect($input[0].validationMessage).to.not.be.empty;
+    });
+  });
+
+  it('should display alert when email and password are wrong', () => {
+    // Fill wrong credentials
+    cy.get('input[type="email"]').type('wrong@example.com');
+    cy.get('input[type="password"]').type('wrongpassword');
+    cy.get('button').contains(/masuk/i).click();
+
+    // Verify error message appears
+    cy.contains(/email or password is wrong/i, {timeout: 10000}).should('be.visible');
+  });
+
+  it('should display homepage when email and password are correct', () => {
+    // Fill correct credentials
+    cy.get('input[type="email"]').type('testuser@example.com');
+    cy.get('input[type="password"]').type('password123');
+    cy.get('button').contains(/masuk/i).click();
+
+    // Verify redirect to homepage
+    cy.url({timeout: 10000}).should('eq', `${Cypress.config().baseUrl}/`);
+
+    // Verify user is logged in (check for logout button or user menu)
+    cy.get('button').contains(/logout/i, {timeout: 10000}).should('be.visible');
   });
 });
