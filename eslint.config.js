@@ -3,6 +3,7 @@ import globals from 'globals';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import react from 'eslint-plugin-react';
+import stylistic from '@stylistic/eslint-plugin';
 
 export default [
   {ignores: ['dist']},
@@ -24,6 +25,7 @@ export default [
       react,
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
+      '@stylistic': stylistic,
     },
     rules: {
       ...js.configs.recommended.rules,
@@ -35,21 +37,18 @@ export default [
         'warn',
         {allowConstantExport: true},
       ],
-      // Google JavaScript Style Guide rules
-      indent: ['error', 2],
-      'linebreak-style': ['error', 'unix'],
-      quotes: ['error', 'single'],
-      semi: ['error', 'always'],
-      'max-len': ['error', {code: 150, ignoreUrls: true}],
-      'no-var': 'error',
-      'prefer-const': 'error',
-      'prefer-arrow-callback': 'error',
-      'arrow-spacing': 'error',
-      'no-trailing-spaces': 'error',
-      'comma-dangle': ['error', 'always-multiline'],
-      'object-curly-spacing': ['error', 'never'],
-      'array-bracket-spacing': ['error', 'never'],
-      'space-before-function-paren': [
+      // Google JavaScript Style Guide rules (migrated to @stylistic)
+      '@stylistic/indent': ['error', 2],
+      '@stylistic/linebreak-style': ['error', 'unix'],
+      '@stylistic/quotes': ['error', 'single'],
+      '@stylistic/semi': ['error', 'always'],
+      '@stylistic/max-len': ['error', {code: 150, ignoreUrls: true}],
+      '@stylistic/arrow-spacing': 'error',
+      '@stylistic/no-trailing-spaces': 'error',
+      '@stylistic/comma-dangle': ['error', 'always-multiline'],
+      '@stylistic/object-curly-spacing': ['error', 'never'],
+      '@stylistic/array-bracket-spacing': ['error', 'never'],
+      '@stylistic/space-before-function-paren': [
         'error',
         {
           anonymous: 'never',
@@ -57,10 +56,15 @@ export default [
           asyncArrow: 'always',
         },
       ],
-      'keyword-spacing': 'error',
-      'space-infix-ops': 'error',
-      'eol-last': ['error', 'always'],
-      'no-multiple-empty-lines': ['error', {max: 2, maxEOF: 1}],
+      '@stylistic/keyword-spacing': 'error',
+      '@stylistic/space-infix-ops': 'error',
+      '@stylistic/eol-last': ['error', 'always'],
+      '@stylistic/no-multiple-empty-lines': ['error', {max: 2, maxEOF: 1}],
+
+      // Non-stylistic rules remain unchanged
+      'no-var': 'error',
+      'prefer-const': 'error',
+      'prefer-arrow-callback': 'error',
       camelcase: ['error', {properties: 'never'}],
       'new-cap': ['error', {capIsNew: false}],
       'no-unused-vars': [

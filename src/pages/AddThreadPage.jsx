@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { asyncAddThread } from '../features/threads/threadsSlice';
-import { ArrowLeft } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardHeader, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
+import {useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {useNavigate} from 'react-router-dom';
+import {asyncAddThread} from '../features/threads/threadsSlice';
+import {ArrowLeft} from 'lucide-react';
+import {Button} from '@/components/ui/button';
+import {Card, CardHeader, CardContent} from '@/components/ui/card';
+import {Input} from '@/components/ui/input';
+import {Label} from '@/components/ui/label';
+import {Textarea} from '@/components/ui/textarea';
 
 function AddThreadPage() {
   const [title, setTitle] = useState('');
@@ -16,11 +16,11 @@ function AddThreadPage() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { status } = useSelector((state) => state.threads);
+  const {status} = useSelector((state) => state.threads);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const result = await dispatch(asyncAddThread({ title, body, category }));
+    const result = await dispatch(asyncAddThread({title, body, category}));
     if (asyncAddThread.fulfilled.match(result)) {
       navigate('/');
     }

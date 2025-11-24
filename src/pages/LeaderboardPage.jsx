@@ -28,7 +28,7 @@ function LeaderboardPage() {
             <ArrowLeft size={24} />
           </Link>
           <h1 className="text-xl font-bold truncate">
-                        Klasemen Pengguna Aktif
+            Klasemen Pengguna Aktif
           </h1>
         </div>
         <div
@@ -43,7 +43,7 @@ function LeaderboardPage() {
 
           {status === 'loading' ? (
             <div className="p-8 text-center text-muted-foreground">
-                            Memuat klasemen...
+              Memuat klasemen...
             </div>
           ) : (
             <div className="divide-y divide-border">

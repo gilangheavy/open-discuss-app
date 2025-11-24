@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
-import { asyncLogin, clearError } from '../features/auth/authSlice';
-import { LogIn } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardHeader, CardContent, CardFooter } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
+import {useState, useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {Link, useNavigate} from 'react-router-dom';
+import {asyncLogin, clearError} from '../features/auth/authSlice';
+import {LogIn} from 'lucide-react';
+import {Button} from '@/components/ui/button';
+import {Card, CardHeader, CardContent, CardFooter} from '@/components/ui/card';
+import {Input} from '@/components/ui/input';
+import {Label} from '@/components/ui/label';
 
 function LoginPage() {
   const [email, setEmail] = useState('');
@@ -14,7 +14,7 @@ function LoginPage() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { status, error, authUser } = useSelector((state) => state.auth);
+  const {status, error, authUser} = useSelector((state) => state.auth);
 
   // Navigate to home when login succeeds and authUser is set
   useEffect(() => {
@@ -27,7 +27,7 @@ function LoginPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(clearError());
-    dispatch(asyncLogin({ email, password }));
+    dispatch(asyncLogin({email, password}));
   };
 
   return (
