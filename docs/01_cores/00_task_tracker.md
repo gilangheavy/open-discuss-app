@@ -72,18 +72,18 @@ Berikut adalah daftar tugas pengembangan yang perlu diselesaikan. Daftar ini aka
     - [x] Setup & Konfigurasi `shadcn/ui` sebagai React Ecosystem.
     - [x] Refactor komponen UI yang ada (Buttons, Inputs, Cards, etc.) menggunakan `shadcn/ui`.
 - [~] **Automation Testing (In Progress - Issue #3)**:
-    - [ ] Setup & Konfigurasi environment testing (Vitest, React Testing Library, Cypress).
-    - [ ] Buat Unit Test untuk Reducers (min. 2).
-    - [ ] Buat Unit Test untuk Thunks (min. 2).
-    - [ ] Buat Integration Test untuk Komponen (min. 2).
-    - [ ] Buat E2E Test untuk alur Login (1 skenario).
-- [~] **CI/CD (Partially Completed - Issue #1)**:
+    - [x] Setup & Konfigurasi environment testing (Vitest, React Testing Library).
+    - [x] Buat Unit Test untuk Reducers (min. 2).
+    - [x] Buat Unit Test untuk Thunks (min. 2).
+    - [x] Buat Integration Test untuk Komponen (min. 2).
+    - [ ] Buat E2E Test untuk alur Login (1 skenario - using Cypress).
+- [x] **CI/CD (Completed - Issue #1)**:
     - [x] Konfigurasi GitHub Actions untuk menjalankan test pada setiap push/PR (`.github/workflows/ci.yml`).
-    - [ ] Konfigurasi Vercel untuk Continuous Deployment.
-    - [ ] Terapkan Branch Protection di `master`/`main`.
+    - [x] Konfigurasi Vercel untuk Continuous Deployment.
+    - [x] Terapkan Branch Protection di `master`/`main`.
     - [x] Siapkan panduan untuk screenshot yang dibutuhkan untuk submission.
 
 **Status Fase:** In Progress (Mulai 24 November 2025)
-*Catatan: `[x]` = Selesai, `[~]` = Sedang Dikerjakan, `[ ]` = Belum Dikerjakan*
+*Catatan: `[x]` = Selesai, `[~]` = Sedang Dikerjakan, `[ ]` = Belum Dikerjakan. Next Step: Implementasi E2E Test Login dengan Cypress.*
 
 ---
