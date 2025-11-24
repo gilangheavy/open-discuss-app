@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest",
-    "e2e": "echo \"No e2e yet\" && exit 0"
+    "e2e": "cypress run"
   },
   "dependencies": {
     "@radix-ui/react-label": "^2.1.8",
