@@ -19,6 +19,7 @@ export default [
         cy: 'readonly',
         Cypress: 'readonly',
         vi: 'readonly',
+        global: 'readonly',
       },
       parserOptions: {
         ecmaVersion: 'latest',
