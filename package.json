@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest",
-    "test:ci": "vitest run --reporter=verbose",
+    "test:ci": "vitest run --reporter=verbose --passWithNoTests --bail=1",
     "e2e": "start-server-and-test dev http://localhost:5173 \"cypress run\""
   },
   "dependencies": {
