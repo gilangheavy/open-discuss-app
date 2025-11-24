@@ -4,7 +4,11 @@ on:
   push:
     branches: [ "main", "development" ]
   pull_request:
-    branches: [ "main", "development" ]
+    types: [opened, synchronize, reopened]
+    branches:
+      - 'development'
+      - 'main'
+      - 'master'
 
 jobs:
   build_and_test:

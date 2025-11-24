@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
-import { asyncRegister, clearError } from '../features/auth/authSlice';
-import { UserPlus } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardHeader, CardContent, CardFooter } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
+import {useState, useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {Link, useNavigate} from 'react-router-dom';
+import {asyncRegister, clearError} from '../features/auth/authSlice';
+import {UserPlus} from 'lucide-react';
+import {Button} from '@/components/ui/button';
+import {Card, CardHeader, CardContent, CardFooter} from '@/components/ui/card';
+import {Input} from '@/components/ui/input';
+import {Label} from '@/components/ui/label';
 
 function RegisterPage() {
   const [name, setName] = useState('');
@@ -15,7 +15,7 @@ function RegisterPage() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { status, error } = useSelector((state) => state.auth);
+  const {status, error} = useSelector((state) => state.auth);
 
   // Navigate to login when registration succeeds
   useEffect(() => {
@@ -28,7 +28,7 @@ function RegisterPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(clearError());
-    dispatch(asyncRegister({ name, email, password }));
+    dispatch(asyncRegister({name, email, password}));
   };
 
   return (
