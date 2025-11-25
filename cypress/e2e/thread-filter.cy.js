@@ -9,31 +9,10 @@
 describe('Thread Filter spec', () => {
   beforeEach(() => {
     // Intercept get all users
-    cy.intercept('GET', '**/users', {
-      statusCode: 200,
-      body: {
-        status: 'success',
-        data: {
-          users: [
-            {
-              id: 'user-1',
-              name: 'John Doe',
-              email: 'john@example.com',
-              avatar: 'https://ui-avatars.com/api/?name=John+Doe',
-            },
-            {
-              id: 'user-2',
-              name: 'Jane Smith',
-              email: 'jane@example.com',
-              avatar: 'https://ui-avatars.com/api/?name=Jane+Smith',
-            },
-          ],
-        },
-      },
-    });
+    cy.intercept('GET', '**/v1/users').as('getUsers');
 
     // Intercept get all threads with different categories
-    cy.intercept('GET', '**/threads', {
+    cy.intercept('GET', '**/v1/threads', {
       statusCode: 200,
       body: {
         status: 'success',
@@ -133,7 +112,7 @@ describe('Thread Filter spec', () => {
 
   it('should display correct message when no threads in category', () => {
     // Intercept with empty category
-    cy.intercept('GET', '**/threads', {
+    cy.intercept('GET', '**/v1/threads', {
       statusCode: 200,
       body: {
         status: 'success',
