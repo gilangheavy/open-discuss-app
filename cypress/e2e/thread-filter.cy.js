@@ -9,7 +9,28 @@
 describe('Thread Filter spec', () => {
   beforeEach(() => {
     // Intercept get all users
-    cy.intercept('GET', '**/v1/users').as('getUsers');
+    cy.intercept('GET', '**/v1/users', {
+      statusCode: 200,
+      body: {
+        status: 'success',
+        data: {
+          users: [
+            {
+              id: 'user-1',
+              name: 'John Doe',
+              email: 'john@example.com',
+              avatar: 'https://ui-avatars.com/api/?name=John+Doe',
+            },
+            {
+              id: 'user-2',
+              name: 'Jane Smith',
+              email: 'jane@example.com',
+              avatar: 'https://ui-avatars.com/api/?name=Jane+Smith',
+            },
+          ],
+        },
+      },
+    }).as('getUsers');
 
     // Intercept get all threads with different categories
     cy.intercept('GET', '**/v1/threads', {
@@ -67,8 +88,15 @@ describe('Thread Filter spec', () => {
       },
     }).as('getThreads');
 
+    // Set token in localStorage to prevent authUser undefined errors
+    cy.window().then((win) => {
+      win.localStorage.setItem('token', 'mock-token-for-testing');
+    });
+
     cy.visit('/');
-    cy.wait('@getThreads');
+
+    // Wait for page to load by checking for thread content
+    cy.contains('Diskusi Terbaru', {timeout: 10000}).should('be.visible');
   });
 
   it('should display category filter buttons', () => {

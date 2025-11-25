@@ -92,7 +92,7 @@ function HomePage() {
               <ThreadItem
                 key={thread.id}
                 thread={thread}
-                authUserId={authUser.id}
+                authUserId={authUser?.id}
                 onVote={onVote}
               />
             ))
