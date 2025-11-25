@@ -1,0 +1,73 @@
+{
+  "status": "success",
+  "data": {
+    "threads": [
+      {
+        "id": "thread-1",
+        "title": "Belajar React Hooks",
+        "body": "Bagaimana cara menggunakan React Hooks dengan baik?",
+        "category": "React",
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "ownerId": "user-1",
+        "upVotesBy": [],
+        "downVotesBy": [],
+        "totalComments": 5
+      },
+      {
+        "id": "thread-2",
+        "title": "Redux Toolkit Tutorial",
+        "body": "Panduan lengkap Redux Toolkit untuk pemula",
+        "category": "Redux",
+        "createdAt": "2025-01-02T00:00:00.000Z",
+        "ownerId": "user-2",
+        "upVotesBy": [],
+        "downVotesBy": [],
+        "totalComments": 3
+      },
+      {
+        "id": "thread-3",
+        "title": "Tips JavaScript ES6",
+        "body": "Fitur-fitur ES6 yang berguna untuk development",
+        "category": "JavaScript",
+        "createdAt": "2025-01-03T00:00:00.000Z",
+        "ownerId": "user-1",
+        "upVotesBy": [],
+        "downVotesBy": [],
+        "totalComments": 2
+      },
+      {
+        "id": "thread-4",
+        "title": "Advanced React Patterns",
+        "body": "Design patterns di React untuk aplikasi skala besar",
+        "category": "React",
+        "createdAt": "2025-01-04T00:00:00.000Z",
+        "ownerId": "user-2",
+        "upVotesBy": [],
+        "downVotesBy": [],
+        "totalComments": 1
+      },
+      {
+        "id": "thread-5",
+        "title": "React Performance Tips",
+        "body": "Optimisasi performa React aplikasi",
+        "category": "React",
+        "createdAt": "2025-01-05T00:00:00.000Z",
+        "ownerId": "user-3",
+        "upVotesBy": [],
+        "downVotesBy": [],
+        "totalComments": 7
+      },
+      {
+        "id": "thread-6",
+        "title": "Redux Best Practices",
+        "body": "Best practices menggunakan Redux di production",
+        "category": "Redux",
+        "createdAt": "2025-01-06T00:00:00.000Z",
+        "ownerId": "user-1",
+        "upVotesBy": [],
+        "downVotesBy": [],
+        "totalComments": 4
+      }
+    ]
+  }
+}
