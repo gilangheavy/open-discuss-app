@@ -7,21 +7,21 @@
 describe('Thread Filter spec', () => {
   beforeEach(() => {
     cy.log('🔧 STUBBING window.fetch DIRECTLY...');
-    
+
     // Load fixture data
     cy.fixture('threads.json').then((threadsData) => {
       cy.fixture('users.json').then((usersData) => {
-        
+
         // Visit with onBeforeLoad to stub fetch BEFORE app initializes
         cy.visit('/', {
           onBeforeLoad(win) {
             // Clear localStorage
             win.localStorage.clear();
-            
+
             // STUB window.fetch directly
             cy.stub(win, 'fetch').callsFake((url, options) => {
               cy.log(`🎣 STUBBED FETCH CALLED: ${url}`);
-              
+
               // Match /v1/threads
               if (url.includes('/v1/threads')) {
                 cy.log('✅ Returning MOCKED threads data');
@@ -30,7 +30,7 @@ describe('Thread Filter spec', () => {
                   json: () => Promise.resolve(threadsData),
                 });
               }
-              
+
               // Match /v1/users
               if (url.includes('/v1/users')) {
                 cy.log('✅ Returning MOCKED users data');
@@ -39,18 +39,18 @@ describe('Thread Filter spec', () => {
                   json: () => Promise.resolve(usersData),
                 });
               }
-              
+
               // For any other URL, call real fetch
               cy.log(`⚠️ URL not matched, calling real fetch: ${url}`);
               return win.fetch.wrappedMethod(url, options);
             }).as('fetchStub');
           },
         });
-        
+
         // Wait for page to load and React to render
         cy.log('⏳ Waiting for app to initialize with MOCKED data...');
         cy.wait(2000); // Give time for Redux thunk to complete
-        
+
         cy.log('✅ App should now have MOCKED data loaded!');
       });
     });
