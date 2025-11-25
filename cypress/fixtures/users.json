@@ -1,0 +1,25 @@
+{
+  "status": "success",
+  "data": {
+    "users": [
+      {
+        "id": "user-1",
+        "name": "John Doe",
+        "email": "john@test.com",
+        "avatar": "https://ui-avatars.com/api/?name=John+Doe"
+      },
+      {
+        "id": "user-2",
+        "name": "Jane Smith",
+        "email": "jane@test.com",
+        "avatar": "https://ui-avatars.com/api/?name=Jane+Smith"
+      },
+      {
+        "id": "user-3",
+        "name": "Bob Wilson",
+        "email": "bob@test.com",
+        "avatar": "https://ui-avatars.com/api/?name=Bob+Wilson"
+      }
+    ]
+  }
+}
