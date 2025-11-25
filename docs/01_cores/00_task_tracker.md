@@ -76,13 +76,13 @@ Berikut adalah daftar tugas pengembangan yang perlu diselesaikan. Daftar ini aka
     - [x] Buat Unit Test untuk Reducers (min. 5).
     - [x] Buat Unit Test untuk Thunks (min. 5).
     - [x] Buat Integration Test untuk Komponen (min. 5).
-    - [ ] Buat E2E Test untuk alur Login (1 skenario - using Cypress).
+    - [x] Buat E2E Test untuk alur Login (1 skenario - using Cypress).
     - [ ] Buat E2E Test untuk alur Register (1 skenario - using Cypress).
     - [ ] Buat E2E Test untuk alur Membuat Thread Baru (1 skenario - using Cypress).
     - [ ] Buat E2E Test untuk alur Memberi Komentar & Vote (1 skenario - using Cypress).
     - [ ] Buat E2E Test untuk alur Leaderboards (1 skenario - using Cypress).
     - [ ] Buat 5 stories komponen Menggunakan Storybook.
-    - [ ] Filter Daftar Thread Berdasarkan Kategori.
+    - [x] Filter Daftar Thread Berdasarkan Kategori.
 - [x] **CI/CD (Completed - Issue #1)**:
     - [x] Konfigurasi GitHub Actions untuk menjalankan test pada setiap push/PR (`.github/workflows/ci.yml`).
     - [x] Konfigurasi Vercel untuk Continuous Deployment.
