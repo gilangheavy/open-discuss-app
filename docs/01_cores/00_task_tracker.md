@@ -78,8 +78,8 @@ Berikut adalah daftar tugas pengembangan yang perlu diselesaikan. Daftar ini aka
     - [x] Buat Integration Test untuk Komponen (min. 5).
     - [x] Buat E2E Test untuk alur Login (1 skenario - using Cypress).
     - [x] Buat E2E Test untuk alur Register (1 skenario - using Cypress).
-    - [~] Buat E2E Test untuk alur Membuat Thread Baru (1 skenario - using Cypress).
-    - [ ] Buat E2E Test untuk alur Memberi Komentar & Vote (1 skenario - using Cypress).
+    - [x] Buat E2E Test untuk alur Membuat Thread Baru (1 skenario - using Cypress).
+    - [~] Buat E2E Test untuk alur Memberi Komentar & Vote (1 skenario - using Cypress).
     - [ ] Buat E2E Test untuk alur Leaderboards (1 skenario - using Cypress).
     - [ ] Buat 5 stories komponen Menggunakan Storybook.
     - [s] E2E Test: Filter Daftar Thread Berdasarkan Kategori (skipped, diganti unit test).
