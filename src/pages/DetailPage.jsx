@@ -107,7 +107,7 @@ function DetailPage() {
             <VoteButtons
               upVotesBy={threadDetail.upVotesBy}
               downVotesBy={threadDetail.downVotesBy}
-              authUserId={authUser.id}
+              authUserId={authUser?.id}
               onVote={onVoteThread}
               orientation="horizontal"
             />
@@ -127,7 +127,7 @@ function DetailPage() {
               <CommentItem
                 key={comment.id}
                 comment={comment}
-                authUserId={authUser.id}
+                authUserId={authUser?.id}
                 onVote={onVoteComment}
               />
             ))}
