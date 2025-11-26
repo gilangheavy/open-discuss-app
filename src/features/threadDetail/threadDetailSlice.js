@@ -99,7 +99,7 @@ const threadDetailSlice = createSlice({
       })
       .addCase(asyncReceiveThreadDetail.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.threadDetail = action.payload;
+        state.threadDetail = action.payload.detailThread;
       })
       .addCase(asyncReceiveThreadDetail.rejected, (state, action) => {
         state.status = 'failed';
