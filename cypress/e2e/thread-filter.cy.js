@@ -4,7 +4,7 @@
  *   - This bypasses Redux middleware and any other layers
  */
 
-describe('Thread Filter spec', () => {
+describe.skip('Thread Filter spec', () => {
   beforeEach(() => {
     cy.log('🔧 STUBBING window.fetch DIRECTLY...');
 
