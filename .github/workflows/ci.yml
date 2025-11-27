@@ -26,6 +26,9 @@ jobs:
       - name: Force install problematic package
         run: npm install eslint-plugin-cypress
 
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
       - name: Run linter
         run: npm run lint
 
