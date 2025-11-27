@@ -3,6 +3,10 @@ import {useDispatch, useSelector} from 'react-redux';
 import {Link, useNavigate} from 'react-router-dom';
 import {asyncRegister, clearError} from '../features/auth/authSlice';
 import {UserPlus} from 'lucide-react';
+import {Button} from '@/components/ui/button';
+import {Card, CardHeader, CardContent, CardFooter} from '@/components/ui/card';
+import {Input} from '@/components/ui/input';
+import {Label} from '@/components/ui/label';
 
 function RegisterPage() {
   const [name, setName] = useState('');
@@ -47,9 +51,12 @@ function RegisterPage() {
         </div>
 
         {/* Form Card */}
-        <div className="bg-card border border-border rounded-lg shadow-md">
-          <div className="p-6 sm:p-8">
-            <h2 className="text-xl font-semibold mb-6">Daftar Akun Baru</h2>
+        <Card>
+          <CardHeader>
+            <h2 className="text-xl font-semibold">Daftar Akun Baru</h2>
+          </CardHeader>
+
+          <CardContent className="space-y-5">
 
             {/* Error Message */}
             {error && (
@@ -65,58 +72,43 @@ function RegisterPage() {
 
             <form onSubmit={handleSubmit} className="space-y-5">
               {/* Name */}
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium mb-2"
-                >
+              <div className="space-y-2">
+                <Label htmlFor="name">
                   Nama Lengkap <span className="text-destructive">*</span>
-                </label>
-                <input
+                </Label>
+                <Input
                   type="text"
                   id="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
                   autoComplete="name"
-                  className="w-full px-4 py-2.5 border border-input rounded-lg
-                    focus:outline-none focus:ring-2 focus:ring-ring
-                    focus:border-transparent bg-background transition-all"
                   placeholder="Masukkan nama lengkap Anda"
                 />
               </div>
 
               {/* Email */}
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium mb-2"
-                >
+              <div className="space-y-2">
+                <Label htmlFor="email">
                   Alamat Email <span className="text-destructive">*</span>
-                </label>
-                <input
+                </Label>
+                <Input
                   type="email"
                   id="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   autoComplete="email"
-                  className="w-full px-4 py-2.5 border border-input rounded-lg
-                    focus:outline-none focus:ring-2 focus:ring-ring
-                    focus:border-transparent bg-background transition-all"
                   placeholder="nama@email.com"
                 />
               </div>
 
               {/* Password */}
-              <div>
-                <label
-                  htmlFor="password"
-                  className="block text-sm font-medium mb-2"
-                >
+              <div className="space-y-2">
+                <Label htmlFor="password">
                   Password <span className="text-destructive">*</span>
-                </label>
-                <input
+                </Label>
+                <Input
                   type="password"
                   id="password"
                   value={password}
@@ -124,24 +116,19 @@ function RegisterPage() {
                   required
                   minLength={6}
                   autoComplete="new-password"
-                  className="w-full px-4 py-2.5 border border-input rounded-lg
-                    focus:outline-none focus:ring-2 focus:ring-ring
-                    focus:border-transparent bg-background transition-all"
                   placeholder="Minimal 6 karakter"
                 />
-                <p className="text-xs text-muted-foreground mt-1.5">
+                <p className="text-xs text-muted-foreground">
                   Gunakan kombinasi huruf, angka, dan simbol untuk keamanan
                 </p>
               </div>
 
               {/* Submit Button */}
-              <button
+              <Button
                 type="submit"
                 disabled={status === 'loading'}
-                className="w-full bg-primary text-primary-foreground
-                  py-3 px-4 rounded-lg font-medium hover:bg-primary/90
-                  transition-all disabled:opacity-50 disabled:cursor-not-allowed
-                  shadow-sm hover:shadow-md mt-6"
+                className="w-full mt-6"
+                size="lg"
               >
                 {status === 'loading' ? (
                   <span className="flex items-center justify-center gap-2">
@@ -151,13 +138,13 @@ function RegisterPage() {
                 ) : (
                   'Daftar Sekarang'
                 )}
-              </button>
+              </Button>
             </form>
-          </div>
+          </CardContent>
 
           {/* Login Link */}
-          <div className="px-6 sm:px-8 pb-6 sm:pb-8 pt-0">
-            <div className="border-t border-border pt-6">
+          <CardFooter className="flex-col">
+            <div className="w-full border-t border-border pt-6">
               <p className="text-center text-sm text-muted-foreground">
                 Sudah punya akun?{' '}
                 <Link
@@ -168,8 +155,8 @@ function RegisterPage() {
                 </Link>
               </p>
             </div>
-          </div>
-        </div>
+          </CardFooter>
+        </Card>
       </div>
     </div>
   );

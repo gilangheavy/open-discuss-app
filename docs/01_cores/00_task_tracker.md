@@ -65,3 +65,45 @@ Berikut adalah daftar tugas pengembangan yang perlu diselesaikan. Daftar ini aka
 **Status Fase:** Completed (23 November 2025)
 
 ---
+
+## ⏳ Fase 5: Submission 2 - UI Upgrade, Testing & CI/CD
+
+- [x] **UI Upgrade (Completed - Issue #2)**:
+    - [x] Setup & Konfigurasi `shadcn/ui` sebagai React Ecosystem.
+    - [x] Refactor komponen UI yang ada (Buttons, Inputs, Cards, etc.) menggunakan `shadcn/ui`.
+- [x] **Automation Testing (Completed - Issues #3, #13, #18, #19, #23)**:
+    - [x] Setup & Konfigurasi environment testing (Vitest, React Testing Library).
+    - [x] Buat Unit Test untuk Reducers (min. 5).
+    - [x] Buat Unit Test untuk Thunks (min. 5).
+    - [x] Buat Integration Test untuk Komponen (min. 5).
+    - [x] Buat E2E Test untuk alur Login (1 skenario - using Cypress).
+    - [x] Buat E2E Test untuk alur Register (1 skenario - using Cypress).
+    - [x] Buat E2E Test untuk alur Membuat Thread Baru (1 skenario - using Cypress).
+    - [s] E2E Test: Memberi Komentar & Vote (skipped, diganti unit test - Issue #19).
+    - [x] Buat Integration Test untuk Leaderboards (Issue #18).
+    - [x] Buat 5 stories komponen Menggunakan Storybook (Issue #23).
+    - [s] E2E Test: Filter Daftar Thread Berdasarkan Kategori (skipped, diganti unit test).
+    - [x] Buat Unit Test untuk logika filter thread (Issue #13).
+    - [x] Buat Unit Test untuk komponen interaksi thread (Issue #19).
+- [x] **CI/CD (Completed - Issue #1)**:
+    - [x] Konfigurasi GitHub Actions untuk menjalankan test pada setiap push/PR (`.github/workflows/ci.yml`).
+    - [x] Konfigurasi Vercel untuk Continuous Deployment.
+    - [x] Terapkan Branch Protection di `master`/`main`.
+    - [x] Siapkan panduan untuk screenshot yang dibutuhkan untuk submission.
+
+**Status Fase:** Completed (27 November 2025)
+
+---
+
+## 🏁 Fase 6: Final Polish & Submission Preparation
+
+- [~] **Final Cleanup (In Progress - Issue #25)**:
+    - [~] Refactor CI Workflow (remove Playwright, fix dependencies).
+    - [~] Codebase Hygiene (ensure zero lint errors).
+    - [~] Production Build Verification.
+    - [~] Documentation Update (README.md).
+
+**Status Fase:** In Progress (27 November 2025)
+*Catatan: `[x]` = Selesai, `[~]` = Sedang Dikerjakan, `[ ]` = Belum Dikerjakan, `[s]` = Skipped.*
+
+---

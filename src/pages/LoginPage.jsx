@@ -3,6 +3,10 @@ import {useDispatch, useSelector} from 'react-redux';
 import {Link, useNavigate} from 'react-router-dom';
 import {asyncLogin, clearError} from '../features/auth/authSlice';
 import {LogIn} from 'lucide-react';
+import {Button} from '@/components/ui/button';
+import {Card, CardHeader, CardContent, CardFooter} from '@/components/ui/card';
+import {Input} from '@/components/ui/input';
+import {Label} from '@/components/ui/label';
 
 function LoginPage() {
   const [email, setEmail] = useState('');
@@ -46,9 +50,12 @@ function LoginPage() {
         </div>
 
         {/* Form Card */}
-        <div className="bg-card border border-border rounded-lg shadow-md">
-          <div className="p-6 sm:p-8">
-            <h2 className="text-xl font-semibold mb-6">Login ke Akun Anda</h2>
+        <Card>
+          <CardHeader>
+            <h2 className="text-xl font-semibold">Login ke Akun Anda</h2>
+          </CardHeader>
+
+          <CardContent className="space-y-5">
 
             {/* Error Message */}
             {error && (
@@ -64,57 +71,39 @@ function LoginPage() {
 
             <form onSubmit={handleSubmit} className="space-y-5">
               {/* Email */}
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium mb-2"
-                >
-                  Alamat Email
-                </label>
-                <input
+              <div className="space-y-2">
+                <Label htmlFor="email">Alamat Email</Label>
+                <Input
                   type="email"
                   id="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   autoComplete="email"
-                  className="w-full px-4 py-2.5 border border-input rounded-lg
-                    focus:outline-none focus:ring-2 focus:ring-ring
-                    focus:border-transparent bg-background transition-all"
                   placeholder="nama@email.com"
                 />
               </div>
 
               {/* Password */}
-              <div>
-                <label
-                  htmlFor="password"
-                  className="block text-sm font-medium mb-2"
-                >
-                  Password
-                </label>
-                <input
+              <div className="space-y-2">
+                <Label htmlFor="password">Password</Label>
+                <Input
                   type="password"
                   id="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   autoComplete="current-password"
-                  className="w-full px-4 py-2.5 border border-input rounded-lg
-                    focus:outline-none focus:ring-2 focus:ring-ring
-                    focus:border-transparent bg-background transition-all"
                   placeholder="Masukkan password Anda"
                 />
               </div>
 
               {/* Submit Button */}
-              <button
+              <Button
                 type="submit"
                 disabled={status === 'loading'}
-                className="w-full bg-primary text-primary-foreground
-                  py-3 px-4 rounded-lg font-medium hover:bg-primary/90
-                  transition-all disabled:opacity-50 disabled:cursor-not-allowed
-                  shadow-sm hover:shadow-md"
+                className="w-full"
+                size="lg"
               >
                 {status === 'loading' ? (
                   <span className="flex items-center justify-center gap-2">
@@ -124,13 +113,13 @@ function LoginPage() {
                 ) : (
                   'Masuk'
                 )}
-              </button>
+              </Button>
             </form>
-          </div>
+          </CardContent>
 
           {/* Register Link */}
-          <div className="px-6 sm:px-8 pb-6 sm:pb-8 pt-0">
-            <div className="border-t border-border pt-6">
+          <CardFooter className="flex-col">
+            <div className="w-full border-t border-border pt-6">
               <p className="text-center text-sm text-muted-foreground">
                 Belum punya akun?{' '}
                 <Link
@@ -141,8 +130,8 @@ function LoginPage() {
                 </Link>
               </p>
             </div>
-          </div>
-        </div>
+          </CardFooter>
+        </Card>
       </div>
     </div>
   );

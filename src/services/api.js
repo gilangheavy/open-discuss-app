@@ -75,7 +75,7 @@ export const getAllThreads = async () => {
 
 export const getThreadDetail = async (threadId) => {
   const data = await apiCall(`/threads/${threadId}`, {skipAuth: true});
-  return data.detailThread;
+  return data;
 };
 
 export const createThread = async ({title, body, category = ''}) => {

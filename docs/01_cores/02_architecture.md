@@ -116,9 +116,35 @@ Kita akan menggunakan **Redux Toolkit** karena menyederhanakan banyak hal, terma
   - `comments/CommentItem.jsx`
   - `leaderboard/LeaderboardList.jsx`
 
-## Langkah Berikutnya
+## 5. UI Component Library (shadcn/ui)
+
+Untuk memenuhi kriteria "React Ecosystem" dan "tampilan menarik", proyek ini akan mengadopsi **shadcn/ui**. Ini bukan library komponen biasa, melainkan kumpulan komponen _reusable_ yang kita salin ke dalam proyek kita.
+
+**Kelebihan:**
+- **Kustomisasi Penuh**: Karena kodenya ada di proyek kita, kita punya kontrol penuh atas style dan perilakunya.
+- **Aksesibilitas**: Dibangun di atas Radix UI, memastikan komponen yang kita gunakan sudah memenuhi standar aksesibilitas.
+- **Modern**: Memberikan tampilan dan nuansa modern pada aplikasi.
+
+Implementasinya akan menggantikan komponen-komponen dasar yang sebelumnya mungkin kita buat manual, seperti `Button`, `Input`, `Card`, dll.
+
+## 6. Strategi Testing ("Smart Testing")
+
+Untuk memenuhi kriteria _automation testing_, kita tidak akan mengejar 100% _test coverage_ secara buta. Sebaliknya, kita menerapkan strategi "Smart Testing" yang berfokus pada pengujian bagian-bagian paling krusial dari aplikasi untuk memastikan keandalan.
+
+-   **Unit Testing (Vitest)**:
+    -   **Target**: Logika murni dan terisolasi.
+    -   **Prioritas**: Semua `reducers` dan `async thunks` di dalam Redux Slices (`/features`). Ini adalah jantung dari logika bisnis dan manajemen state kita.
+-   **Integration/Component Testing (React Testing Library)**:
+    -   **Target**: Komponen yang memiliki interaksi dan state internal, atau yang berinteraksi dengan Redux store.
+    -   **Prioritas**: Komponen-komponen seperti `LoginPage` (validasi form), `CommentInput` (interaksi dengan Redux), dan `VoteButtons` (optimistic update).
+-   **End-to-End (E2E) Testing (Cypress)**:
+    -   **Target**: Alur kerja kritis dari perspektif pengguna.
+    -   **Prioritas**: Menguji skenario "happy path" seperti alur **Login** dan alur **Membuat Thread Baru**.
+
+## 7. Langkah Berikutnya
 
 Developer (`antigravity`) dapat mulai bekerja dengan urutan berikut:
+
 
 1.  **Setup Proyek**: Inisialisasi proyek React, install `redux-toolkit`, `react-redux`, `react-router-dom`.
 2.  **Konfigurasi ESLint**: Siapkan file `.eslintrc.json` sesuai dengan salah satu style guide yang disetujui.
