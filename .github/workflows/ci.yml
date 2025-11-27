@@ -7,9 +7,9 @@ on:
       - 'master'
 
 jobs:
-  build_and_test:
+  build:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
 
     steps:
       - name: Checkout repository
@@ -29,9 +29,33 @@ jobs:
       - name: Run linter
         run: npm run lint
 
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: build
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Force install problematic package
+        run: npm install eslint-plugin-cypress
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
       - name: Run tests
         run: npm run test:ci
         timeout-minutes: 5
 
       - name: Run E2E tests
         run: npm run e2e
+

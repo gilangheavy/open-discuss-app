@@ -27,3 +27,5 @@ dist-ssr
 *.tmp
 *.temp
 *.temp.*
+*storybook.log
+storybook-static
