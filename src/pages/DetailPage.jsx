@@ -85,6 +85,11 @@ function DetailPage() {
               {threadDetail.title}
             </h2>
             <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
+              <img
+                src={threadDetail.owner.avatar}
+                alt={threadDetail.owner.name}
+                className="w-8 h-8 rounded-full"
+              />
               <span className="font-medium text-foreground">
                 {threadDetail.owner.name}
               </span>
